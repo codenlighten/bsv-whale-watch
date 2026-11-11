@@ -42,3 +42,7 @@ put a key into a hosted copy of the file.
 
 The CSV export lists each TXID, block height, timestamp, largest and total output (in
 satoshis), output count, provider and whether the scan was complete.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
