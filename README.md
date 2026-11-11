@@ -43,6 +43,12 @@ put a key into a hosted copy of the file.
 The CSV export lists each TXID, block height, timestamp, largest and total output (in
 satoshis), output count, provider and whether the scan was complete.
 
+## Hosting
+
+The repo deploys as-is to CapRover: `captain-definition` points to a `Dockerfile` that serves
+`bsv_whale_scanner.html` as `index.html` from `nginx:1.27-alpine`. Serve it over HTTPS (the page uses
+`crypto.subtle` to hash-check downloaded transactions). Never bake an API key into a hosted copy.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
