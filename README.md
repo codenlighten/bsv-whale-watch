@@ -13,7 +13,9 @@ request budget is reported as partial.
 **Bitails** (`api.bitails.io`)
 - Lists block summaries and skips any block whose total output value is below the threshold
   (no single output can exceed the total).
-- In the remaining blocks, skips any transaction whose `sumOfOutputsSatoshis` is below the threshold.
+- In the remaining blocks, lists transaction IDs 5,000 per request and fetches their output sums 100 per
+  request (`POST /tx/multi`), then skips any transaction whose `sumOfOutputsSatoshis` is below the threshold.
+  A block of 30,000 transactions costs about 300 requests, not 30,000.
 - Downloads each remaining transaction raw (`/download/tx/{txid}/hex`), checks that its
   double-SHA256 equals the TXID, and parses the outputs itself.
 - The free tier allows 1,000 requests a day without a key.
